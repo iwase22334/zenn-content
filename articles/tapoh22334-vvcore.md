@@ -8,20 +8,21 @@ published: false
 
 ## VOICEVOX CORE Rust Bindings
 
-これはVOICEVOX COREの非公式のRust FFIラッパーです。
-VOICEVOX COREを呼び出すための高レベルAPIを提供します。
-また、直接VOICEVOX COREが提供するffiを呼び出すための低レベルAPIも提供します。
+VOICEVOX COREの非公式のRust FFIラッパーを使用します。
+このクレートは、VOICEVOX COREを呼び出すための高レベルAPIを提供します。
 
 https://crates.io/crates/vvcore
 
 
 ## APIドキュメント
 
+APIドキュメントはこちらにあります。
 https://docs.rs/vvcore/0.0.2/vvcore/
 
 
 ## プロジェクトの作成
 
+実際にサンプルを動かしてみましょう。
 プロジェクトを作成します。
 ```
 cargo new sample
