@@ -42,22 +42,13 @@ VOICEVOX COREは、C言語のヘッダファイル(voicevox_core.h)と動的ラ�
 「voicevox_core.h」からrust-bindgenを使用して、低レベルラッパを生成します。
 生成された低レベルラッパは「voicevox_core.rs」に配置されます。
 
-### 2.高レベルAPIの生成
-
-高レベルラッパ生成はChatGPTが行います。
-生成された高レベルラッパには手動で修正が必要です。
-修正が完了するまで、手直しを繰り返します。
-最終的に生成された高レベルラッパは「api.rs」に配置されます。
-
-## 低レベルAPI生成
-
-### 準備
+#### 準備
 
 ```
 cargo install bindgen-cli
 ```
 
-### 生成
+#### 生成
 
 以下のコマンドで低レベルAPIを生成した。手直しは一切していない。
 
@@ -65,8 +56,14 @@ cargo install bindgen-cli
 bindgen voicevox_core.h -o voicevox_core.rs
 ```
 
+### 2.高レベルAPIの生成
 
-## 高レベルAPI生成
+高レベルラッパ生成はChatGPTが行います。
+生成された高レベルラッパには手動で修正が必要です。
+修正が完了するまで、手直しを繰り返します。
+最終的に生成された高レベルラッパは「api.rs」に配置されます。
+
+#### 呪文
 
 以下の呪文で生成します。
 個数が多くなると出力が途中で止まるので、関数をひとつづつコピペして生成していきます。
@@ -95,7 +92,7 @@ extern "C" {
 }
 ```
 
-### ChatGPIの出力
+#### ChatGPIの出力
 
 Here's an example of a wrapper function for the voicevox_tts and voicevox_wav_free functions in Rust:
 
