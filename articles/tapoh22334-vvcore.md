@@ -3,7 +3,7 @@ title: "VOICEVOX COREをRustから使う方法"
 emoji: "🥕"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [ "Rust", "音声合成", "VOICEVOX" ]
-published: false
+published: true
 ---
 
 ## VOICEVOX CORE Rust Bindings
