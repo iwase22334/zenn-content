@@ -27,11 +27,15 @@ https://github.com/VOICEVOX/voicevox_core
 全体の構想は以下の図のようになります。FFIが提供されているVOICEVOX COREを、低レベルなAPIでラップします。
 その後、低レベルでunsafeなRustのAPIをよりRust-idiomaticなコードでラップして高レベルなAPIにします。
 
+![](https://storage.googleapis.com/zenn-user-upload/9fc42a55e8b6-20230404.png)
+
 ## ワークフロー
 
 以下はUMLの図表で、Voicevox Coreのラッパー生成のフローを表しています。
 VOICEVOX COREは、C言語のヘッダファイル(voicevox_core.h)と動的ライブラリが配布されています。
 このヘッダファイルからRustのコードを生成して、アプリケーションからアクセスできるようにします。
+
+![](https://storage.googleapis.com/zenn-user-upload/978161946e03-20230404.png)
 
 ### 1.低レベルAPI生成
 
