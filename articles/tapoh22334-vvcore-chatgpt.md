@@ -3,7 +3,7 @@ title: "ChatGPTで自動プログラミング ~ラッパ関数を自動生成す
 emoji: "🥕"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ChatGPT", "Rust"]
-published: false
+published: true
 ---
 
 ## はじめに
@@ -14,7 +14,15 @@ VOICEVOXという合成音声ソフトウェアをRustで直接呼び出せる�
 https://crates.io/crates/vvcore
 
 
-## VOICEVO CORE
+## 全体像
+
+全体の構想は以下の図のようになります。FFIが提供されているVOICEVOX COREを、低レベルなAPIでラップします。
+その後、低レベルでunsafeなRustのAPIをよりRust-idiomaticなコードでラップして高レベルなAPIにします。
+
+![](https://storage.googleapis.com/zenn-user-upload/9fc42a55e8b6-20230404.png)
+
+
+### VOICEVO CORE
 
 VOICEVOXは、VOICEVO COREという名前でコアライブラリを公開しており、
 FFI経由でコア機能にアクセスできます。
@@ -22,12 +30,6 @@ FFI経由でコア機能にアクセスできます。
 https://github.com/VOICEVOX/voicevox_core
 
 
-## 全体像
-
-全体の構想は以下の図のようになります。FFIが提供されているVOICEVOX COREを、低レベルなAPIでラップします。
-その後、低レベルでunsafeなRustのAPIをよりRust-idiomaticなコードでラップして高レベルなAPIにします。
-
-![](https://storage.googleapis.com/zenn-user-upload/9fc42a55e8b6-20230404.png)
 
 ## ワークフロー
 
@@ -50,7 +52,7 @@ cargo install bindgen-cli
 
 #### 生成
 
-以下のコマンドで低レベルAPIを生成した。手直しは一切していない。
+以下のコマンドで低レベルAPIを生成しました。手直しは一切していないです。
 
 ```
 bindgen voicevox_core.h -o voicevox_core.rs
